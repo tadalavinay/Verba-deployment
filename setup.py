@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="goldenverba",
+    name="verba",
     version="2.1.3",
     packages=find_packages(),
     python_requires=">=3.10.0,<3.13.0",
