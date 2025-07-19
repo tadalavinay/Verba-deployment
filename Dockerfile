@@ -4,6 +4,10 @@ FROM python:3.12-slim
 # Set the working directory inside the container
 WORKDIR /app
 
+# THE DEFINITIVE FIX: Set the PYTHONPATH environment variable.
+# This permanently tells Python inside the container to look for code in the /app directory.
+ENV PYTHONPATH=/app
+
 # Copy all project files into the container's /app directory
 COPY . .
 
@@ -16,4 +20,3 @@ EXPOSE 8000
 
 # The command to run when the container starts
 CMD ["uvicorn", "verba.main:app", "--host", "0.0.0.0", "--port", "8000"]
-
